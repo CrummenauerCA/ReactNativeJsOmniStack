@@ -10,3 +10,5 @@ Mudar as barras em settings.gradle de '\' para '/'
 #react-native link react-native-vector-icons
 
 #yarn add axios
+
+#yarn add socket.io-client
