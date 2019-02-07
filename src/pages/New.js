@@ -15,12 +15,20 @@ export default class New extends Component {
     this.props.navigation.pop();
   }
 
+  handleTweet = () => {
+
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity onPress={this.goBack}>
             <Icon name="close" size={24} color="#4bb0ee" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.button} onPress={this.handleTweet}>
+            <Text style={styles.buttonText}>Tweetar</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
