@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Text, TouchableOpacity, AsyncStorage } from 'react-native';
 
 export default class New extends Component {
+  static navigationOptions = {
+    title: 'Novo tweet'
+  }
+
   render() {
     return <View style={styles.container} />;
   }
