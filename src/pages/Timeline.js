@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default class Timeline extends Component {
   render() {
     return(
-      <View>
+      <View style={styles.container}>
         <Text>Timeline</Text>
       </View>
     );
