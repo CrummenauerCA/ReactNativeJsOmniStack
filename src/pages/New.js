@@ -19,6 +19,12 @@ export default class New extends Component {
 
   }
 
+  handleInputChange = newTweet => {
+    this.setState({
+      newTweet
+    });
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -31,6 +37,16 @@ export default class New extends Component {
             <Text style={styles.buttonText}>Tweetar</Text>
           </TouchableOpacity>
         </View>
+        <TextInput
+          style={styles.input}
+          multiline
+          placeholder="O que está acontecendo?"
+          placeholderTextColor="#999"
+          value={this.state.newTweet}
+          onChangeText={this.handleInputChange}
+          returnKeyType="send"
+          onSubmitEditing={this.handleTweet}
+        />
       </SafeAreaView>
     );
   }
