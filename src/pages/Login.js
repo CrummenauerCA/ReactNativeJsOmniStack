@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, View, Text, TextInput, TouchableOpacityd, StyleSheet } from 'react-native';
 
 export default class Login extends Component {
   render() {
-    return <View style={styleMedia.container} />;
+    return (
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <View style={styles.content}>
+          <Text>Olá galera!</Text>
+        </View>
+      </KeyboardAvoidingView>
+    );
   }
 }
 
