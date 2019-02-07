@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { KeyboardAvoidingView, View, Text, TextInput, TouchableOpacityd, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Login extends Component {
@@ -7,8 +7,20 @@ export default class Login extends Component {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.content}>
-          <Text>Olá galera!</Text>
-          <Icon name="twitter" size={64} color="#4bb0ee" />
+          <Text>Twitter</Text>
+          <View>
+            <Icon name="twitter" size={64} color="#4bb0ee" />
+          </View>
+          <TextInput
+            style={styles.input}
+            placeholder="Nome de usuário"
+            //value={}
+            returnKeyType="send"
+          />
+
+          <TouchableOpacity onPress={() => { }} style={styles.button}>
+            <Text style={styles.buttonText}>Entrar</Text>
+          </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
     );
