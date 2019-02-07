@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, StyleSheet, SafeAreaView, Text, TextInput, TouchableOpacity, AsyncStorage } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import api from '../services/api';
+
 export default class New extends Component {
   static navigationOptions = {
     title: 'Novo tweet'
@@ -15,8 +17,16 @@ export default class New extends Component {
     this.props.navigation.pop();
   }
 
-  handleTweet = () => {
+  handleTweet = async () => {
+    const content = this.state.newTweet;
+    const author = await AsyncStorage.getItem('@OmniStack: username');
 
+    await api.post('tweets', {
+      author,
+      content
+    });
+
+    this.goBack();
   }
 
   handleInputChange = newTweet => {
