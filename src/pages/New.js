@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
-
-import { View, StyleSheet, SafeAreaView, Text, TouchableOpacity, AsyncStorage } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Text, TextInput, TouchableOpacity, AsyncStorage } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class New extends Component {
   static navigationOptions = {
     title: 'Novo tweet'
   }
 
+  state = {
+    newTweet: '',
+  }
+
+  goBack = () => {
+    this.props.navigation.pop();
+  }
+
   render() {
-    return <View style={styles.container} />;
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={this.goBack}>
+            <Icon name="close" size={24} color="#4bb0ee" />
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
   }
 }
 
