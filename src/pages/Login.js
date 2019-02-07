@@ -7,6 +7,13 @@ export default class Login extends Component {
     username: ''
   }
 
+  async componentDidMount() {
+    const username = await AsyncStorage.getItem('@OmniStack: username', username);
+    if (username) {
+      this.props.navigation.navigate('Timeline');
+    }
+  }
+
   handleLogin = async () => {
     const {username} = this.state;
     if (!username.length) return;
